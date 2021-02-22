@@ -55,7 +55,7 @@ jobs:
       - run: go test -bench . ./...
       - run: go install github.com/anacrolix/godo@latest
       - run: sudo modprobe fuse
-      - run: cd `mktemp -d` && fs/test.sh
+      - run: fs/test.sh
       - save_cache:
           key: go-cache-{{ .Revision }}
           paths:
