@@ -1,4 +1,4 @@
-module github.com/anacrolix/torrent
+module github.com/aspasskiy/torrent
 
 require (
 	bazil.org/fuse v0.0.0-20200407214033-5883e5a4b512
