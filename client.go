@@ -988,7 +988,7 @@ func (cl *Client) sendInitialMessages(conn *PeerConn, torrent *Torrent) {
 	}
 	func() {
 		if conn.fastEnabled() {
-			if torrent.haveAllPieces() {
+			if torrent.HaveAllPieces() {
 				conn.post(pp.Message{Type: pp.HaveAll})
 				conn.sentHaves.AddRange(0, bitmap.BitIndex(conn.t.NumPieces()))
 				return
@@ -1281,7 +1281,7 @@ func (cl *Client) allTorrentsCompleted() bool {
 		if !t.haveInfo() {
 			return false
 		}
-		if !t.haveAllPieces() {
+		if !t.HaveAllPieces() {
 			return false
 		}
 	}

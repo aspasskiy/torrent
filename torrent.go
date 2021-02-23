@@ -823,7 +823,7 @@ func (t *Torrent) haveAnyPieces() bool {
 	return t._completedPieces.Len() != 0
 }
 
-func (t *Torrent) haveAllPieces() bool {
+func (t *Torrent) HaveAllPieces() bool {
 	if !t.haveInfo() {
 		return false
 	}
@@ -841,7 +841,7 @@ func (t *Torrent) maybeDropMutuallyCompletePeer(
 	if !t.cl.config.DropMutuallyCompletePeers {
 		return
 	}
-	if !t.haveAllPieces() {
+	if !t.HaveAllPieces() {
 		return
 	}
 	if all, known := p.peerHasAllPieces(); !(known && all) {
